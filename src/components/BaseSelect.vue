@@ -18,7 +18,7 @@ const props = defineProps({
       @change="$emit('input', $event.target.value)">
       <option disabled selected value="test" class="py-2">Select item</option>
       <option class="py-2" v-for="item in props.data" :key="item.id" :value="item.id">
-        {{ item.name }} {{ item.id }}
+        {{ item.name }}
       </option>
     </select>
   </div>

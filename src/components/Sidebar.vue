@@ -22,6 +22,11 @@ const menus = [
     name: "Employee",
     route: '/employee'
   },
+  {
+    icon: "class",
+    name: "Department",
+    route: '/department'
+  },
 ];
 </script>
 <template>
@@ -183,4 +188,5 @@ aside {
     position: fixed;
     z-index: 99;
   }
-}</style>
+}
+</style>

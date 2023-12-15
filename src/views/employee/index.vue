@@ -38,6 +38,7 @@ const { allEmployee, employee, isUpdate } = storeToRefs(store)
             <BaseInput class="py-1" v-model="employee.email" label="E-mail" />
             <BaseInput class="py-1" v-model="employee.phone" label="Telefon raqami" />
             <BaseSelect class="py-1" v-model="employee.job_id" :data="allJobs" @change="selectJobFn($event)" label="Mutaxasisligi" />
+            <BaseSelect class="py-1" v-model="employee.department_id" :data="allJobs" @change="selectJobFn($event)" label="Bo'lim" />
         </template>
     </BaseModal>
 </template>

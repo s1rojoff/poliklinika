@@ -21,10 +21,15 @@ export const routes = [
         component: () => import("../views/employee/index.vue"),
       },
       {
-        path: "setting",
-        name: "Setting",
-        component: () => import("../views/setting/index.vue"),
+        path: "department",
+        name: "Department",
+        component: () => import("../views/department/index.vue"),
       },
+      // {
+      //   path: "setting",
+      //   name: "Setting",
+      //   component: () => import("../views/setting/index.vue"),
+      // },
     ]
   },
   {

@@ -34,7 +34,8 @@ export function useEmployeeFn() {
                 birthday: "",
                 email: "",
                 phone: "",
-                job_id: ''
+                job_id: '',
+                department_id: ''
             }
         }
         else {
@@ -46,7 +47,8 @@ export function useEmployeeFn() {
                     birthday: "",
                     email: "",
                     phone: "",
-                    job_id: ''
+                    job_id: '',
+                    department_id: ''
                 }
             }
         }
@@ -75,7 +77,8 @@ export function useEmployeeFn() {
             birthday: "",
             email: "",
             phone: "",
-            job_id: ''
+            job_id: '',
+            department_id: ''
         }
     }
     return {

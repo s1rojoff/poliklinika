@@ -13,16 +13,16 @@ export const router = createRouter({
     // }
 })
 
-router.beforeEach((to, _, next) => {
-    const isAuthenticated = getItem('Authorization');
+// router.beforeEach((to, _, next) => {
+//     const isAuthenticated = getItem('Authorization');
 
-    if (to.path !== '/login' && !isAuthenticated) {
-      next({ name: 'Login' });
-    } else if (to.meta.public && !!isAuthenticated) {
-      next({ name: 'Dashboard' });
-    } else if (to.path === '' && isAuthenticated) {
-      next({ name: 'Dashboard' });
-    } else {
-      next();
-    }
-  });
+//     if (to.path !== '/login' && !isAuthenticated) {
+//       next({ name: 'Login' });
+//     } else if (to.meta.public && !!isAuthenticated) {
+//       next({ name: 'Dashboard' });
+//     } else if (to.path === '' && isAuthenticated) {
+//       next({ name: 'Dashboard' });
+//     } else {
+//       next();
+//     }
+//   });

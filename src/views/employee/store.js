@@ -11,7 +11,8 @@ export const useEmployeeStore = defineStore('employee', {
                 birthday: "",
                 email: "",
                 phone: "",
-                job_id: ''
+                job_id: '',
+                department_id: ''
             },
             isUpdate: false,
             employee_id: ''
