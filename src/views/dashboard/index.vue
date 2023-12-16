@@ -9,19 +9,19 @@ const { seriesJob,
     dataJob,
     seriesDep,
     dataDep } = storeToRefs(store)
-const {      } = useDashboardFn()
+const { test } = useDashboardFn()
 
 </script>
 <template>
+    <p v-if="false">{{ test }}</p>
     <main class="p-5 w-full">
         <h1 class="text-xl font-semibold text-center">Dashboard</h1>
 
         <div class="h-[90vh] overflow-y-scroll scrollbarActive pb-5 mt-5">
             <p>Bo'lim xodimlari uchun statistika</p>
-            <BaseChart :series="seriesDep" :data="dataDep" />
+            <BaseChart v-if="seriesDep.length > 0 && dataDep.length > 0" :series="seriesDep" :data="dataDep" />
             <p>Xodimlar mutaxasisliklari bo'yicha statistika</p>
-            <BaseChart :series="seriesJob" :data="dataJob" />
-
+            <BaseChart v-if="seriesJob.length > 0 && dataJob.length > 0" :series="seriesJob" :data="dataJob" />
         </div>
     </main>
 </template>
