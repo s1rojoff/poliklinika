@@ -20,7 +20,7 @@ const props = defineProps({
             </div>
             <div class="pt-2">
                 <p class="text-xs text-neutral-500">Tug'ilgan sanasi</p>
-                <p class="text-base"> {{ String(props.cardInfo.birthday).substring(0,10) }}</p>
+                <p class="text-base"> {{ String(props.cardInfo.birthday).substring(0, 10) }}</p>
             </div>
             <div class="pt-2">
                 <p class="text-xs text-neutral-500">E-mail</p>
@@ -31,8 +31,12 @@ const props = defineProps({
                 <p class="text-base"> {{ props.cardInfo.phone }}</p>
             </div>
             <div class="pt-2">
+                <p class="text-xs text-neutral-500">Bo'limi</p>
+                <p class="text-base"> {{ props.cardInfo.department_name }}</p>
+            </div>
+            <div class="pt-2">
                 <p class="text-xs text-neutral-500">Mutaxasisligi</p>
-                <p class="text-base"> {{ props.cardInfo.name }}</p>
+                <p class="text-base"> {{ props.cardInfo.job_name }}</p>
             </div>
         </div>
         <div class="pt-3">

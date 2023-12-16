@@ -23,6 +23,7 @@ export const useEmployeeStore = defineStore('employee', {
             axios.get(`${baseUrl}api/employee`).then(res => {
                 this.allEmployee = res.data
                 // console.log(res.data);
+                return res
             })
                 .catch(err => {
                     console.log(err)
@@ -40,6 +41,15 @@ export const useEmployeeStore = defineStore('employee', {
         createEmployee(data) {
             axios.post(`${baseUrl}api/employee`, data).then(res => {
                 this.getAllEmployees()
+                this.employee = {
+                    fname: "",
+                    sname: "",
+                    birthday: "",
+                    email: "",
+                    phone: "",
+                    job_id: '',
+                    department_id: ''
+                }
                 return res.data
             }).catch(err => {
                 console.log(err);
@@ -48,6 +58,16 @@ export const useEmployeeStore = defineStore('employee', {
         updateEmployee(id, data) {
             axios.put(`${baseUrl}api/employee/${id}`, data).then(res => {
                 this.getAllEmployees()
+                this.employee = {
+                    fname: "",
+                    sname: "",
+                    birthday: "",
+                    email: "",
+                    phone: "",
+                    job_id: '',
+                    department_id: ''
+                }
+                return res
             }).catch(err => {
                 console.log(err)
             })

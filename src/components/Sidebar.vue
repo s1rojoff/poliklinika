@@ -18,14 +18,14 @@ const menus = [
     route: '/job'
   },
   {
-    icon: "groups",
-    name: "Employee",
-    route: '/employee'
-  },
-  {
     icon: "class",
     name: "Department",
     route: '/department'
+  },
+  {
+    icon: "groups",
+    name: "Employee",
+    route: '/employee'
   },
 ];
 </script>

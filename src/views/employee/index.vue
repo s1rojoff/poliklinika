@@ -6,12 +6,15 @@ import BaseButton from '../../components/BaseButton.vue'
 import BaseInput from '../../components/BaseInput.vue';
 import BaseSelect from '../../components/BaseSelect.vue'
 import { useJobStore } from '../job/store';
+import { useDepartmentStore } from '../department/store';
 import { useEmployeeStore } from './store';
 import { useEmployeeFn } from './composable'
 const jobStore = useJobStore()
+const departmentStore = useDepartmentStore()
+const {allDepartments} = storeToRefs(departmentStore)
 const { allJobs } = storeToRefs(jobStore)
 const store = useEmployeeStore()
-const { modal, deleteEmployeeFn, createOrEditEmployeeFn, selectJobFn, getEmployeeWithId, cancelActionFn } = useEmployeeFn()
+const { modal, deleteEmployeeFn, createOrEditEmployeeFn,selectDepartmentFn, openModalFn,selectJobFn, getEmployeeWithId, cancelActionFn } = useEmployeeFn()
 const { allEmployee, employee, isUpdate } = storeToRefs(store)
 
 </script>
@@ -19,7 +22,7 @@ const { allEmployee, employee, isUpdate } = storeToRefs(store)
     <main class="p-5 w-full">
         <div class="flex justify-between py-3">
             <h1 class="text-xl font-semibold">Hodimlar</h1>
-            <BaseButton @click="modal = true" />
+            <BaseButton @click="openModalFn" />
         </div>
         <!-- <BaseTable :tableBody="fake" /> -->
         <div class="h-[90vh] overflow-y-scroll scrollbarActive pb-5">
@@ -37,8 +40,8 @@ const { allEmployee, employee, isUpdate } = storeToRefs(store)
             <BaseInput class="py-1" v-model="employee.birthday" type="date" label="Tug'ilgan sanasi" />
             <BaseInput class="py-1" v-model="employee.email" label="E-mail" />
             <BaseInput class="py-1" v-model="employee.phone" label="Telefon raqami" />
-            <BaseSelect class="py-1" v-model="employee.job_id" :data="allJobs" @change="selectJobFn($event)" label="Mutaxasisligi" />
-            <BaseSelect class="py-1" v-model="employee.department_id" :data="allJobs" @change="selectJobFn($event)" label="Bo'lim" />
+            <BaseSelect class="py-1" v-model="employee.job_id" :options="allJobs" @selected="selectJobFn($event)" label="Mutaxasisligi" />
+            <BaseSelect class="py-1" v-model="employee.department_id" :options="allDepartments" @selected="selectDepartmentFn($event)" label="Bo'lim" />
         </template>
     </BaseModal>
 </template>
